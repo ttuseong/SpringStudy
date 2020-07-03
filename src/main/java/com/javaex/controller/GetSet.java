@@ -48,9 +48,22 @@ import com.javaex.vo.PersonVo;
 //	PhoneDao phoneDao = new PhoneDao();
 //	phoneDao.personInsert(vo);
 //	
-//	//리턴할 때 redirect가 없으면 포워드
+//	
 //	return "redirect:/phone/list";
 //}
+
+//방법 3
+//전달된 값이 ? 뒤에 오는 값이 아니라 이전에 있는 값을 받을 때 사용
+//@RequestMapping( value=“/board/view/{no}” )
+//public String delete( @PathVariable(“no”) int no ) { 
+//System.out.println(vo.toString());
+//
+//PhoneDao phoneDao = new PhoneDao();
+//phoneDao.delete(no);
+//
+//return "redirect:/phone/list";
+//}
+
 
 //jsp로 값을 보내는 방법
 //그동안 HttpServlet을 상속받았기 때문에 requset와 session을 통해 jsp로 값을 전달했는데

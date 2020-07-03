@@ -17,6 +17,18 @@ public class Redirect {
 		PhoneDao phoneDao = new PhoneDao();
 		phoneDao.personInsert(vo);
 		
+		//redirect
 		return "redirect:/phone/list";
 	}
+	
+//	@RequestMapping("/write")
+//	public String write(@ModelAttribute PersonVo vo) {
+//		System.out.println(vo.toString());
+//	
+//		PhoneDao phoneDao = new PhoneDao();
+//		phoneDao.personInsert(vo);
+//		
+		//forword
+//		return "WEB-INF/views/list.jsp";
+//	}
 }
