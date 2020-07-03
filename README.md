@@ -44,7 +44,12 @@ jar 파일을 다운받아 프로젝트에 추가할 경우 그것과 연관된 
   
 ![maven version](https://user-images.githubusercontent.com/38309884/86430451-478fb600-bd2d-11ea-8b8e-f75491e684a4.png)
   
-클릭하면 여러 버전들이 나오고 사용할 버전을 클릭합니다.
+클릭하면 여러 버전들이 나오고 사용할 버전을 클릭합니다.  
   
 ![maven code](https://user-images.githubusercontent.com/38309884/86430459-4c546a00-bd2d-11ea-97d4-1fdce22fdac3.png)
-클릭을 하면 다음과 같은 화면으로 이동되고 dependency 부분을 복사하여 pom.xml에 추가합니다.
+클릭을 하면 다음과 같은 화면으로 이동되고 dependency 부분을 복사하여 pom.xml에 추가합니다.  
+  
+[다음 셋팅으로 이동]
+
+
+[다음 셋팅으로 이동]:https://github.com/ttuseong/SpringStudy/tree/master/webapp/WEB-INF
