@@ -68,7 +68,7 @@ public class PhoneController {
 	}
 	
 	@RequestMapping("/delete")
-	public String update(Model model, @RequestParam("id") int id) {
+	public String delete(Model model, @RequestParam("id") int id) {
 		PhoneDao phoneDao = new PhoneDao();
 		
 		phoneDao.personDelete(id);
