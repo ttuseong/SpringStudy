@@ -42,15 +42,27 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 //축약형
 //method를 안쓴 경우 GET과 POST 방식 모두 받는 것이 기본 값으로 설정되고, method가 없기 때문에 값을 구분할 필요가 없어서 value도 생략이 가능합니다.
-@Controller
-public class Base {
+//@Controller
+//public class Base {
+//
+//	@RequestMapping("/list")
+//	public String list() {
+//		
+//		return "/WEB-INF/views/list.jsp";
+//	}
+//}
 
-	@RequestMapping("/list")
-	public String list() {
-		
-		return "/WEB-INF/views/list.jsp";
-	}
-}
+//View Resolver에서 추가적인 셋팅을 한 경우
+//리턴 부분에서 포워딩에 공통적인 부분을 생략할 수 있게 도와준다
+//@Controller
+//public class Base {
+//
+//	@RequestMapping("/list")
+//	public String list() {
+//		
+//		return "list";
+//	}
+//}
 
 //작성 팁 : @con을 입력 후 Ctrl + Space를 누르면 목록에 @Controller이 나타나고 엔터를 누르면 자동으로 임포트 작업도 이루어집니다
 //       같은 방법으로 @req를 입력한 후 Ctrl + Space를 누르면 목록에@RequestMapping가 나타납니다.

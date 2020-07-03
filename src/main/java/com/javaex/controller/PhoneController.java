@@ -36,28 +36,13 @@ public class PhoneController {
 		return "/WEB-INF/views/writeForm.jsp";
 	}
 	
-//	@RequestMapping("/write")
-//	public String write(@RequestParam("name") String name, @RequestParam("hp") String hp, @RequestParam("company") String company) {
-//		System.out.println(name + ", " + hp + ", " + company);
-//		return "redirect:/phone/list";
-//	}
-	
-//	@RequestMapping("/write")
-//	public String write(@RequestParam("name") String name, @RequestParam("hp") String hp,
-//						@RequestParam(value="company", required = false, defaultValue = "000") String company) {
-//		System.out.println(name + ", " + hp + ", " + company);
-//		return "redirect:/phone/list";
-//	}
-	
-	
 	@RequestMapping("/write")
-	public String write(@ModelAttribute PersonVo vo) {//사용할 때 기본 생성자가 있어야한다, 넘어온 파라미터 값이랑 생성자에 있는 파라미터 값이랑 이름이 일치해야한다, set도 있어야함
+	public String write(@ModelAttribute PersonVo vo) {
 		System.out.println(vo.toString());
 
 		PhoneDao phoneDao = new PhoneDao();
 		phoneDao.personInsert(vo);
-		
-		//리턴할 때 redirect가 없으면 포워드
+
 		return "redirect:/phone/list";
 	}
 	
