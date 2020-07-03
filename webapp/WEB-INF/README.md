@@ -20,6 +20,7 @@ DispatcherServlet에 대한 설정 파일
 <context:annotation-config />
 ```
  @Autowired, @Qualifier, @PostConstruct, @PreDestroy 등  나중에 활용할 어노테이션들을 사용하기 위해 사용
+ >어노테이션은 @가 붙어서 프로그램의 소스코드 안에 다른 프로그램을 위한 정보를 미리 약속한 형식으로 포함시킨 것이다
 ```
 <context:component-scan  base-package="com.javaex.controller" />
 ```
@@ -34,4 +35,6 @@ DispatcherServlet가 개발자가 만든 controller을 쉽게 찾기 위해 cont
 	<property name="order" value="1" />
 </bean>
 ```
-ViewResolver에 대한 셋팅으로 포워드를 할 때 path가 보통 "WEB-INF/.../index.jsp"가 되는데 여기서 공통된 부분을 미리 넣어주는 것으로 prefix는 공통된 부분 중 앞에 붙는 내용이고, suffix는 뒤에 붙는 내용입니다. 마지막으로 order는 View Resolver이 두개 이상일 때 우선순위를 정해주고 value가 낮을 수록 우선순위가 높습니다.
+ViewResolver에 대한 셋팅으로 포워드를 할 때 path가 보통 "WEB-INF/.../index.jsp"가 되는데 여기서 공통된 부분을 미리 넣어주는 것으로 prefix는 공통된 부분 중 앞에 붙는 내용이고, suffix는 뒤에 붙는 내용입니다. 마지막으로 order는 View Resolver이 두개 이상일 때 우선순위를 정해주고 value가 낮을 수록 우선순위가 높습니다.([사용 예시, 55번 줄 부터 확인 ](https://github.com/ttuseong/SpringStudy/blob/master/src/main/java/com/javaex/controller/Base.java))  
+  
+[컨트롤러로 이동](https://github.com/ttuseong/SpringStudy/tree/master/src/main/java/com/javaex/controller)
