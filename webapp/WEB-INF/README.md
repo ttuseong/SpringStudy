@@ -1,4 +1,6 @@
-# web.xml
+# [web.xml](https://github.com/ttuseong/SpringStudy/blob/master/webapp/WEB-INF/web.xml)
+
+
 스프링 이전에 필요한 셋팅을 하는 구간  
 ```  
 <servlet>
@@ -14,7 +16,7 @@
 DispatcherServlet를 설정하는 구간으로 servlet 태그에서 DispatcherServlet을 사용하겠다는 의미를 가지고 있고, servlet-mapping 태그에서 DispatcherServlet의 설정 파일 위치를 지정합니다.  
 url-pattern 태그에 /가 있기 때문에 같은 디렉터리에 있는 파일을 찾습니다. 그리고 두 태그 안에 있는 servlet-name 태그는 설정 파일의 이름과 일치해야하기 때문에 같은 이름을 사용합니다.  
   
-# spring-servlet.xml
+# [spring-servlet.xml](https://github.com/ttuseong/SpringStudy/blob/master/webapp/WEB-INF/spring-servlet.xml)
 DispatcherServlet에 대한 설정 파일
 ```
 <context:annotation-config />

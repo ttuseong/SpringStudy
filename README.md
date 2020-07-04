@@ -24,9 +24,20 @@ jar 파일을 다운받아 프로젝트에 추가할 경우 그것과 연관된 
 ### 설정방법
 ![maven setting](https://user-images.githubusercontent.com/38309884/86428217-2d52d980-bd27-11ea-9a6b-f7dc7f646298.png)
 ![pom](https://user-images.githubusercontent.com/38309884/86429026-3b095e80-bd29-11ea-8f0c-ecf190da8190.png)
-첫 번째 사진처럼 Maven 프로젝트로 전환시키면 두 번째 사진처럼 pom.xml이 나온다. 
+  첫 번째 사진처럼 Maven 프로젝트로 전환시키면 두 번째 사진처럼 pom.xml이 나온다. 
 이 pom을 통해 개발자는 라이브러리 추가가 가능하다.
+
+### 에러 잡는 법
+가끔 문법에 문제가 없는데 에러 표시가 나올 경우가 있습니다.  
+이 경우 Maven을 통해 설치한 모든 파일을 지우고 다시 설치하는 방법으로 에러를 해결할 수 있습니다.  
   
+![clean](https://user-images.githubusercontent.com/38309884/86512060-827f1000-be39-11ea-94b3-88d777798634.png)
+
+![updateproject](https://user-images.githubusercontent.com/38309884/86512059-81e67980-be39-11ea-8c6d-3d551b9f1a7f.png)
+![update](https://user-images.githubusercontent.com/38309884/86512061-8317a680-be39-11ea-9112-72a7a46078ab.png)
+  
+업데이트를 할 때 Force Update of Snapshos/Releases를 클릭 후 진행해야 합니다.
+
 ### 라이브러리 추가 방법
 
 ![pom setting](https://user-images.githubusercontent.com/38309884/86429579-f5e62c00-bd2a-11ea-8ab2-b9d7c184cb1d.png)
