@@ -24,7 +24,7 @@ jar 파일을 다운받아 프로젝트에 추가할 경우 그것과 연관된 
 ### 설정방법
 ![maven setting](https://user-images.githubusercontent.com/38309884/86428217-2d52d980-bd27-11ea-9a6b-f7dc7f646298.png)
 ![pom](https://user-images.githubusercontent.com/38309884/86429026-3b095e80-bd29-11ea-8f0c-ecf190da8190.png)
-  첫 번째 사진처럼 Maven 프로젝트로 전환시키면 두 번째 사진처럼 pom.xml이 나온다. 
+<br>첫 번째 사진처럼 Maven 프로젝트로 전환시키면 두 번째 사진처럼 pom.xml이 나온다. 
 이 pom을 통해 개발자는 라이브러리 추가가 가능하다.
 
 ### 에러 잡는 법
@@ -59,6 +59,17 @@ jar 파일을 다운받아 프로젝트에 추가할 경우 그것과 연관된 
   
 ![maven code](https://user-images.githubusercontent.com/38309884/86430459-4c546a00-bd2d-11ea-97d4-1fdce22fdac3.png)
 클릭을 하면 다음과 같은 화면으로 이동되고 dependency 부분을 복사하여 pom.xml에 추가합니다.  
+  
+### pool
+pool에 대한 개념은 웹뿐만 아니라 다양한 분야에서 활용이 되는데 이 개념을 게임 쪽에서 사용하는 것을 예시로 생각하면 쉽게 와닿는 것 같습니다.  
+게임을 플레이한다고 가정했을 때 플레이어가 있는 필드에는 매우 많은 몬스터가 있습니다.  플레이어는 이 몬스터들을 잡는 과정에서 그 몬스터에 대한 정보를 없애고 일정 시간이 지난 후에 다시 생성하는 과정이 반복적으로 발생하는데, 만약 플레이어가 한 번에 많은 몬스터를 잡는다면 이 과정이 동시에 발생합니다.  
+컴퓨터 입장에서는 부담되는 작업이 동시에 발생하여 렉의 원인이 될 수 있기 때문에 플레이어가 필드로 이동할 때 나오는 로딩 과정에서 몬스터를 미리 메모리에 올려두고 플레이어가 몬스터를 잡을 경우 메모리에서 지우는 과정이 아닌 화면에서만 안 보이게 처리를 하고 일정 시간이 흐른 뒤 다시 보이게 하는 과정을 반복하여 문제를 해결합니다.  
+이처럼 특정 수 만큼 미리 메모리에 올려두고 사용이 끝나도 메모리에 계속 남겨두어 다시 사용하는 방법이 pool입니다.
+  
+### mybatis
+XML이나 어노테이션을 사용하여 SQL과 객체를 연결시켜주는 프레임워크  
+  
+기존에 [JDBC](https://github.com/ttuseong/SpringStudy/blob/master/src/main/java/com/javaex/dao/PhoneDao.java)로 코딩했을 경우 사용자의 입력값과 SQL을 통해 얻게 될 값에 대한 처리가 힘든 점을 보완한 방법으로 설정만 잘 되었다면 [DAO](https://github.com/ttuseong/SpringStudy/blob/master/src/main/java/com/javaex/dao/PhoneDaoMybatis.java)와 [SQL](https://github.com/ttuseong/SpringStudy/blob/master/src/main/resources/mybatis/mappers/phonebook.xml)에 대한 코딩이 간편해진 모습을 확인할 수 있다.
   
 [다음 셋팅으로 이동]
 
