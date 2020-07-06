@@ -1,8 +1,8 @@
-package com.javaex.controller;
-
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+//package com.javaex.controller;
+//
+//import org.springframework.stereotype.Controller;
+//import org.springframework.web.bind.annotation.RequestMapping;
+//import org.springframework.web.bind.annotation.RequestMethod;
 
 //url에 localhost:8088/path/list를 입력하면 list.jsp로 포워드해줍니다.
 

@@ -1,15 +1,15 @@
-package com.javaex.controller;
-
-import java.util.List;
-
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-
-import com.javaex.dao.PhoneDao;
-import com.javaex.vo.PersonVo;
+//package com.javaex.controller;
+//
+//import java.util.List;
+//
+//import org.springframework.stereotype.Controller;
+//import org.springframework.ui.Model;
+//import org.springframework.web.bind.annotation.ModelAttribute;
+//import org.springframework.web.bind.annotation.RequestMapping;
+//import org.springframework.web.bind.annotation.RequestMethod;
+//
+//import com.javaex.dao.PhoneDao;
+//import com.javaex.vo.PersonVo;
 
 //url에서 값을 읽는 두가지 방법
 
