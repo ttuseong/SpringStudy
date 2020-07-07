@@ -1,3 +1,4 @@
+
 # [Base.java](https://github.com/ttuseong/SpringStudy/blob/master/src/main/java/com/javaex/controller/Base.java)
 사용자가 url을 입력했을 경우 요청에 따라 jsp 파일을 보여주는 예시가 있는 클래스 파일  
   
@@ -12,3 +13,6 @@ redirect와 forword를 하는 방법 소개
   
 # [PhoneController](https://github.com/ttuseong/SpringStudy/blob/master/src/main/java/com/javaex/controller/PhoneController.java)
 위에서 설명한 내용들을 활용한 예시
+  
+# [PhoneControllerPool](https://github.com/ttuseong/SpringStudy/blob/master/src/main/java/com/javaex/controller/PhoneControllerPool.java)
+DataSource나 MyBatis를 사용할 경우 적용될 컨트롤러의 모습

@@ -16,6 +16,8 @@ import com.javaex.vo.PersonVo;
 @Controller
 @RequestMapping("/phone")
 public class PhoneControllerPool {
+	//datasource나 mybatis를 사용하여 Dao롤 자동으로 생성할 계획이기 때문에 메소드에 있던 PhoneDao의 생성 부분을
+	//필드로 빼고 자동으로 생성해주는 것을 알려줘야하기 때문에 Autowired 어노테이션을 추가합니다.
 	@Autowired
 	private PhoneDaoMybatis phoneDao;
 	
