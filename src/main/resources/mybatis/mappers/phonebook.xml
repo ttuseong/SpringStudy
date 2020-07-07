@@ -2,8 +2,15 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="phonebook">
+
+	<resultMap id="resultMapPersonVo" type="com.javaex.vo.PersonVo" >
+    	<result column="person_id" property="personId" />
+    	<result column="name" property="name" />
+    	<result column="hp" property="hp" />
+    	<result column="company" property="company" />
+	</resultMap>
 	
-	<select id="getList" resultType="com.javaex.vo.PersonVo" >
+	<select id="getList" resultMap="resultMapPersonVo" >
 		<![CDATA[
 			select person_id personId,
 				   name,

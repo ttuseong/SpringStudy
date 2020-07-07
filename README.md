@@ -1,4 +1,5 @@
 
+
  # DispatchedServlet & MVC
 
 ![spring](https://user-images.githubusercontent.com/38309884/86424289-1d35fc80-bd1d-11ea-8454-cbb33c29a765.png)
@@ -16,7 +17,7 @@
 개발자가 만든 Controller의 처리 결과를 보여줄 view와 사용할 값을 전달하는 역할  
   
 ### View Resolver  
-Controller가 리턴한 뷰 정보를 통해 뷰를 찾는 역할  
+forward를 할 경우 파일의 위치와 파일 이름 그리고 확장자를 넣어주게 되는데 이때 파일의 위치와 확장자는 공통이 될 경우가 많습니다. 이 정보를 미리 저장을 하고 사용자가 만든 Controller에서 파일 이름이 오면 파일 위치와 확장자를 붙여주는 역할을 합니다. 
   
 # Maven
 jar 파일을 다운받아 프로젝트에 추가할 경우 그것과 연관된 다른 종속 라이브러리 또한 찾아야 하는 불편함이 있는데 Maven을 통해서 일관성 있는 라이브러리간의 의존관계 (의존성) 관리를 할 수 있다.  
