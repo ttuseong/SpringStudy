@@ -1,3 +1,4 @@
+
 # [web.xml](https://github.com/ttuseong/SpringStudy/blob/master/webapp/WEB-INF/web.xml)
 
 
@@ -74,6 +75,24 @@ property 부분을 확인하면 그동안 [JDBC](https://github.com/ttuseong/Spr
 [현재 설정을 적용한 모습](https://github.com/ttuseong/SpringStudy/blob/master/src/main/java/com/javaex/dao/PhoneDaoConnectionPool.java)을 확인하면 필드와 getConnection 부분이 줄어든 것을 확인할 수 있습니다.
   
 또한 DAO는 미리 저장소에 저장해야하기 때문에 Repository 어노테이션을 추가하고, DataSource를 통해 자동으로 Connection을 받야하기 때문에 Autowired 어노테이션이 추가된 것을 확인할 수 있습니다. 
-
-
+  
+```
+<bean id="sqlSessionFactory"
+	class="org.mybatis.spring.SqlSessionFactoryBean">
+	<property name="dataSource" ref="oracleDatasource" />
+	<property name="configLocation"
+		value="classpath:mybatis/configuration.xml" />
+</bean>
+```
+[코드](https://github.com/ttuseong/SpringStudy/blob/master/src/main/java/com/javaex/dao/PhoneDaoMybatis.java)에서 SqlSession을 자동으로 생성하기 위해 사용되며, db에 연결하기 위해 datasource에 대한 정보와 sql을 처리하기 위한 정보를 property로 받는다.
+  
+```
+<bean id="sqlSession"
+	class="org.mybatis.spring.SqlSessionTemplate">
+	<constructor-arg index="0" ref="sqlSessionFactory" />
+</bean>
+```
+SqlSession을 사용하는 코드에서 SqlSession을 대체하는 역할을 하고, 동시에 접근이 이루어져도 프로그램의 실행에 문제가 없기 때문에 사용된다고 합니다.
+  
+  
 [컨트롤러로 이동](https://github.com/ttuseong/SpringStudy/tree/master/src/main/java/com/javaex/controller)
