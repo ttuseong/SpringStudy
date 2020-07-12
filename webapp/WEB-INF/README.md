@@ -1,4 +1,3 @@
-
 # [web.xml](https://github.com/ttuseong/SpringStudy/blob/master/webapp/WEB-INF/web.xml)
 
 
@@ -49,7 +48,15 @@ DispatcherServlet가 개발자가 만든 controller을 쉽게 찾기 위해 cont
 </bean>
 ```
 ViewResolver에 대한 셋팅으로 포워드를 할 때 path가 보통 "WEB-INF/.../index.jsp"가 되는데 여기서 공통된 부분을 미리 넣어주는 것으로 prefix는 공통된 부분 중 앞에 붙는 내용이고, suffix는 뒤에 붙는 내용입니다. 마지막으로 order는 View Resolver이 두개 이상일 때 우선순위를 정해주고 value가 낮을 수록 우선순위가 높습니다.([사용 예시, 55번 줄 부터 확인 ](https://github.com/ttuseong/SpringStudy/blob/master/src/main/java/com/javaex/controller/Base.java))  
-
+```
+<mvc:default-servlet-handler />
+<mvc:annotation-driven />
+```
+CSS나 JS, 이미지 등 html이 추가적인 파일을 서버에 요청할 때 사용한 URL이 개발자가 만든 Controller에 없어서 발생하는 문제를 해결하기 위해 추가된 설정입니다.
+  
+<mvc:default-servlet-handler />을 통해 DefaultServletHttpRequestHandler가 생성되고 이 객체를 통해 개발자가 작성한 Controller에 없는 URL을 요청할 경우 기본 서블릿에 전달하여 처리합니다.
+  
+<mvc:annotation-driven />
 ### [applicationContext.xml](https://github.com/ttuseong/SpringStudy/blob/master/webapp/WEB-INF/applicationContext.xml)
 web.xml에서 지정한 이름과 같아야하고, spring-servlet.xml이 Spring에 대한 설정 파일이면 applicationContext.xml은 Spring을 제외한 세부 controller에 대한 설정 파일입니다.
    
@@ -75,24 +82,6 @@ property 부분을 확인하면 그동안 [JDBC](https://github.com/ttuseong/Spr
 [현재 설정을 적용한 모습](https://github.com/ttuseong/SpringStudy/blob/master/src/main/java/com/javaex/dao/PhoneDaoConnectionPool.java)을 확인하면 필드와 getConnection 부분이 줄어든 것을 확인할 수 있습니다.
   
 또한 DAO는 미리 저장소에 저장해야하기 때문에 Repository 어노테이션을 추가하고, DataSource를 통해 자동으로 Connection을 받야하기 때문에 Autowired 어노테이션이 추가된 것을 확인할 수 있습니다. 
-  
-```
-<bean id="sqlSessionFactory"
-	class="org.mybatis.spring.SqlSessionFactoryBean">
-	<property name="dataSource" ref="oracleDatasource" />
-	<property name="configLocation"
-		value="classpath:mybatis/configuration.xml" />
-</bean>
-```
-[코드](https://github.com/ttuseong/SpringStudy/blob/master/src/main/java/com/javaex/dao/PhoneDaoMybatis.java)에서 SqlSession을 자동으로 생성하기 위해 사용되며, db에 연결하기 위해 datasource에 대한 정보와 sql을 처리하기 위한 정보를 property로 받는다.
-  
-```
-<bean id="sqlSession"
-	class="org.mybatis.spring.SqlSessionTemplate">
-	<constructor-arg index="0" ref="sqlSessionFactory" />
-</bean>
-```
-SqlSession을 사용하는 코드에서 SqlSession을 대체하는 역할을 하고, 동시에 접근이 이루어져도 프로그램의 실행에 문제가 없기 때문에 사용된다고 합니다.
-  
-  
+
+
 [컨트롤러로 이동](https://github.com/ttuseong/SpringStudy/tree/master/src/main/java/com/javaex/controller)

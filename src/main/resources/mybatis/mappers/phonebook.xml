@@ -10,6 +10,17 @@
     	<result column="company" property="company" />
 	</resultMap>
 	
+	<select id="getPerson" parameterType="int" resultType="com.javaex.vo.PersonVo">
+		<![CDATA[
+			select person_id personID,
+				   name,
+				   hp,
+				   company
+			from   person
+			where  person_id = #{no}
+		]]>
+	</select>
+	
 	<select id="getList" resultMap="resultMapPersonVo" >
 		<![CDATA[
 			select person_id personId,
@@ -22,17 +33,19 @@
 		]]>
 	</select>
 	
-	<select id="getPerson" parameterType="int" resultType="com.javaex.vo.PersonVo">
+	<!-- 
+	<select id="aliasTest" resultType="PersonVo">
 		<![CDATA[
-			select person_id personID,
+			select person_id personId,
 				   name,
 				   hp,
 				   company
 			from   person
-			where  person_id = #{no}
+			order by person_id desc
 		]]>
 	</select>
-	
+	 -->
+	 
 	<insert id="personInsert" parameterType="com.javaex.vo.PersonVo">
 		<![CDATA[
 			insert into person
