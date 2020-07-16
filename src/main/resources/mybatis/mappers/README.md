@@ -63,3 +63,18 @@ sql에서 접근하기 위해서 크게 mapper 태그로 감싸고 namespace를 
 </select>
 ```
 [앞에 설정 파일](https://github.com/ttuseong/SpringStudy/blob/master/src/main/resources/mybatis/configuration.xml)에서 typeAlias를 설정했다면, 클래스를 사용할 때 패키지 이름을 생략할 수 있습니다.
+```
+<select id="getPerson" parameterType="map" resultType="map">
+	<![CDATA[
+		select person_id personID,
+		name,
+		hp,
+		company
+		from person
+		where person_id = #{no}
+	]]>
+</select>
+```
+추가적으로 받는 값과 데이터를 map으로 받는 것이 가능합니다.  
+데이터를 받아올 경우 기존에 설정한 key 값을 이용해 불러오는 것이 가능하지만, 결과 값으로 넘길 경우 key 값에 대한 설정이 따로 없습니다. 그래서 Service에서 map의 결과 값을 사용하려고 할 경우 받는 컬럼의 이름을 대문자로 입력합니다.  
+예) 위에 커리문에서 name 값을 불러올 경우 map.get("NAME");으로 가져올 수 있습니다.
