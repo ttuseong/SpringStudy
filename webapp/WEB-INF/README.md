@@ -1,3 +1,4 @@
+
 # [web.xml](https://github.com/ttuseong/SpringStudy/blob/master/webapp/WEB-INF/web.xml)
 
 
@@ -56,7 +57,9 @@ CSS나 JS, 이미지 등 html이 추가적인 파일을 서버에 요청할 때 
   
 <mvc:default-servlet-handler />을 통해 DefaultServletHttpRequestHandler가 생성되고 이 객체를 통해 개발자가 작성한 Controller에 없는 URL을 요청할 경우 기본 서블릿에 전달하여 처리합니다.
   
-<mvc:annotation-driven />
+<mvc:annotation-driven />  
+디폴트 설정을 가지고 활성화하기 위해 사용됩니다.
+  
 ### [applicationContext.xml](https://github.com/ttuseong/SpringStudy/blob/master/webapp/WEB-INF/applicationContext.xml)
 web.xml에서 지정한 이름과 같아야하고, spring-servlet.xml이 Spring에 대한 설정 파일이면 applicationContext.xml은 Spring을 제외한 세부 controller에 대한 설정 파일입니다.
    
