@@ -18,6 +18,9 @@ public class ApiPhoneBookController {
 	@ResponseBody
 	@RequestMapping("/insert")
 	public PersonVo list(@ModelAttribute PersonVo personVo){
+		
+		System.out.println(personVo.toString() + "*****************************");
+		
 		phoneService.write(personVo);
 		
 		return personVo;

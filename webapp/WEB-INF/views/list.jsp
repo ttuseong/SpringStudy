@@ -56,27 +56,27 @@
 		var hp = prompt("핸드폰 번호를 입력하세요");
 		var company= prompt("회사 번호를 입력하세요");
 		
-		var data ={
-			name : name,
-			hp : hp,
-			company : company
-		}
-		
 		console.log(name + ", " + hp + ", " + company);
+		
+		addBook(name, hp, company);
 	});
 	
-	function addBook(data){
+	function addBook(name, hp, company){
+		console.log(name + ", " + hp + ", " + company + "*******************************");
 		$.ajax({
-			
 			url : "${pageContext.request.contextPath }/api/phonebook/insert",		
 			type : "post",
-			contentType : "application/json",
-			data : data,
+			//contentType : "application/json",
+			data : {
+				name : name,
+				hp : hp,
+				company : company
+			},
 
 			dataType : "json",
 			success : function(result){
 				/*성공시 처리해야될 코드 작성*/
-				addtable(data);
+				addtable(result);
 			},
 			error : function(XHR, status, error) {
 				console.error(status + " : " + error);
@@ -86,32 +86,32 @@
 	
 	function addtable(data){
 		var str = "";
-		str += '<table border = "1">';
-		str += '<colgroup>';
-		str += '<col style = "width : 120px;">';
-		str += '<col style = "width : 170px;">';
-		str += '</colgroup>';
-		str +=
-		str +=
-		str +=
-		str +=
-		str +=
-		str +=
-		str +=
-		str +=
-		str +=
-		str +=
-		str +=
-		str +=
-		str +=
-		str +=
-		str +=
-		str +=
-		str +=
-		str +=
-		str +=
-		str +=
-		$(div).append()
+		str += ' <table border = "1">';
+		str += ' 	<colgroup>';
+		str += ' 		<col style = "width : 120px;">';
+		str += ' 		<col style = "width : 170px;">';
+		str += ' 	</colgroup>';
+		str += ' 	<tbody>';
+		str += ' 		<tr>';
+		str += ' 			<td>이름(name)</td>';
+		str += ' 			<td>'+data.name+'</td>';
+		str += ' 		</tr>';
+		str += ' 		<tr>';
+		str += ' 			<td>핸드폰(hp)</td>';
+		str += ' 			<td>'+data.hp+'</td>';
+		str += ' 		</tr>';
+		str += ' 		<tr>';
+		str += ' 			<td>회사(company)</td>';
+		str += ' 			<td>'+data.company+'</td>';
+		str += ' 		</tr>';
+		str += ' 		<tr>';
+		str += ' 			<td><a href="/study/phone/updateForm">수정</a></td>';
+		str += ' 			<td><a href="/study/phone/delete">삭제</a></td>';
+		str += ' 		</tr>';
+		str += ' 	</tbody>';
+		str += ' </table>';
+		str += ' <br>';
+		$("div").append(str);
 	}
 </script>
 </html>
