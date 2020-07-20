@@ -34,4 +34,8 @@ public class PhoneService {
 	public int delete(int id) {
 		return phoneDao.personDelete(id);
 	}
+	
+	public void writeByAjax(PersonVo personVo) {
+		phoneDao.insertByAjax(personVo);
+	}
 }

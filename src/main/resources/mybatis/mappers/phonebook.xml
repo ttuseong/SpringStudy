@@ -68,4 +68,14 @@
 			where person_id = #{personId}
 		]]>
 	</update>
+	
+	<insert id="insertByAjax" parameterType="com.javaex.vo.PersonVo">
+		<selectKey keyProperty="personId" resultType="int" order="BEFORE">
+			select seq_person_id.nextval from dual
+		</selectKey>
+		<![CDATA[
+			insert into person
+			values (#{personId}, #{name}, #{hp}, #{company})
+		]]>
+	</insert>
 </mapper>

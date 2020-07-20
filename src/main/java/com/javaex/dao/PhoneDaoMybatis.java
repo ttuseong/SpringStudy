@@ -56,5 +56,9 @@ public class PhoneDaoMybatis {
 		
 		return count;
 	}
+	
+	public void insertByAjax(PersonVo personVo) {
+		sqlsession.insert("phonebook.insertByAjax", personVo);
+	}
 
 }
