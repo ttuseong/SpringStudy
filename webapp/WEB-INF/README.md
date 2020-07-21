@@ -1,4 +1,5 @@
 
+
 # [web.xml](https://github.com/ttuseong/SpringStudy/blob/master/webapp/WEB-INF/web.xml)
 
 
@@ -59,8 +60,34 @@ CSS나 JS, 이미지 등 html이 추가적인 파일을 서버에 요청할 때 
   
 <mvc:annotation-driven />  
 디폴트 설정을 가지고 활성화하기 위해 사용됩니다.
+
+```
+<mvc:annotation-driven>
+	<mvc:message-converters>
+		<bean
+			class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+			<property name="supportedMediaTypes">
+				<list>
+					<value>application/json; charset=UTF-8</value>
+				</list>
+			</property>
+		</bean>
+	</mvc:message-converters>
+</mvc:annotation-driven>
+```  
+json을 사용하기 위한 설정 내용입니다. 사용하기 위해서 jackson 라이브러리가 필요합니다.  
+json은 데이터 표기방법 중의 하나로 서로 다른 언어들간에 데이터를 주고받을 수 있도록 만들어진 텍스트 기반의 형식입니다.  
+기능이 적지만 그만큼 가볍기 때문에 파싱이 빠르고, 간단한 구조로 인해 클라이언트/서버 어디서든 쉽게 사용이 가능합니다.  
   
-### [applicationContext.xml](https://github.com/ttuseong/SpringStudy/blob/master/webapp/WEB-INF/applicationContext.xml)
+- json 데이터는 이름과 값의 쌍으로 이루어집니다.  
+ex) {"name": "식빵"}
+- json 데이터는 쉼표(,)로 나열됩니다.  
+ex) {  "name": "식빵",  "family": "웰시코기",  "age": 1,  "weight": 2.14 }
+- 객체(object)는 중괄호({})로 둘러쌓아 표현합니다.  
+ex) var target = { age: 29, name: "LichKing"};
+- 배열(array)은 대괄호([])로 둘러쌓아 표현합니다.
+ex) var arr = [{no : 1}, {no : 2}];
+# [applicationContext.xml](https://github.com/ttuseong/SpringStudy/blob/master/webapp/WEB-INF/applicationContext.xml)
 web.xml에서 지정한 이름과 같아야하고, spring-servlet.xml이 Spring에 대한 설정 파일이면 applicationContext.xml은 Spring을 제외한 세부 controller에 대한 설정 파일입니다.
    
 ```
