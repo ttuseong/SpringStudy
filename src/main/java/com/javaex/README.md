@@ -1,6 +1,9 @@
 # Controller
 Clinet의 요청을 어떻게 처리할지 정의하고 어떻게 응답할지 결정하는 곳
-
+  
+# API Controller
+ajax를 통해 접근할 컨트롤러
+  
 # Service
 프로그램에서 실세계의 규칙에 따라 데이터를 생성·표시·저장·변경하는 곳
 
