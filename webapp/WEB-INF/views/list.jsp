@@ -19,6 +19,7 @@
 	
 	
 	<button id="regBtn">추가번호 등록</button>
+	<a href="${pageContext.request.contextPath }/file/form">이미지 첨부 페이지</a>
 	<!-- <a href = "/study/phone/writeForm">추가번호 등록</a> -->
 </body>
 
